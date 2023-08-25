@@ -11,12 +11,7 @@ const App = () => {
     const fetchNews = async () => {
       try {
         const response = await axios.get(
-          `https://api.newscatcherapi.com/v2/latest_headlines?countries=IN&page_size=5&page=1&lang=en&when=24h`,
-          {
-            headers: {
-              "x-api-key": "dd4v3o7ubqKAGX6mAjasCuHN9GBahGXJUwqTYW29Xzc",
-            },
-          }
+          `https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=b740a19a81574ceaa1751ff82d53c495`
         );
         setArticles(response.data.articles);
         console.log(response.data.articles);
